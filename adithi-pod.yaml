@@ -7,4 +7,3 @@ spec:
   containers:
     - name: veg-container
       image: adithi741/veg:v1.0.0
-      imagePullPolicy: Never
