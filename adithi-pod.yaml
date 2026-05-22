@@ -6,5 +6,5 @@ metadata:
 spec:
   containers:
     - name: veg-container
-      image: veg:v1.0.0
+      image: adithi741/veg:v1.0.0
       imagePullPolicy: Never
