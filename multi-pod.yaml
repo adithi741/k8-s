@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: adithi-pod
+
+spec:
+  containers:
+
+    - name: veg-container
+      image: nginx
+      ports:
+        - containerPort: 80
+
+    - name: fitness-container
+      image: adithi741/fitnessimg:v1.0.0
+      ports:
+        - containerPort: 5002

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: adithi-ReplicaSet
+  labels:
+    app: web
+spec: # DEFINES THE BEHAVIOUR OF THE REPLICASET
+  replicas: 2
+  selector:
+    matchLabels:
+      web: nginx_container
+  template:
+    metadata:
+      labels:
+        web: nginx
+    spec: # DEFINES THE BEHAVIOUR OF THE POD  
+      containers:
+        - image: nginx
+          name: nginx_container  
+          ports:
+            - containerPort: 80
