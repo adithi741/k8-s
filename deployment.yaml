@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: clusterip-service
 spec:
   selector:
     app: web
@@ -32,3 +32,18 @@ spec:
       port: 80
       targetPort: 80
   type: ClusterIP
+
+---
+
+kind: Service
+metadata:
+  name: nodeport-service
+spec:
+  selector:
+    app: web
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30007
+  type: NodePort
