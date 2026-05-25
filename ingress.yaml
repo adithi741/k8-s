@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: adithi-ingress
+  annotations:  # to give extra instructions to ingress controller
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false" # to disable https redirection
+    nginx.ingress.kubernetes.io/rewrite-target: /$2 # to rewrite the url path to root 
+spec:
+  ingressClassName: nginx # to specify the ingress controller to be used
+  rules:
+    - http:
+        paths:
+        - path: /nginx(/|$)(.*) # to match the url path and capture the remaining path
+            pathType: Prefix
+            backend:
+              service:
+                name: adithi-service
+                port:
+                  number: 81
