@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: organic-ghee-configmap
+  namespace: adithi-ns
+
+data:
+  APP_NAME: organic-ghee-app
+  APP_PORT: "5656"
+  APP_ENV: production
+  COMPANY_NAME: Organic-Ghee
+  VERSION: "v1.0.0"

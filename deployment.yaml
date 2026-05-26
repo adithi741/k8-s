@@ -20,6 +20,9 @@ spec:
           image: adithi741/organic-ghee-app:v1.0.0
           ports:
             - containerPort: 5656
+          envFrom:
+            - configMapRef:
+                name: organic-ghee-configmap
 
 ---
 
